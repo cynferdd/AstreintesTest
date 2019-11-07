@@ -9,6 +9,12 @@ namespace Rules
     /// </summary>
     public class SlotValidation : ISlotValidation
     {
+        private readonly IValidation<User> userValidation;
+
+        public SlotValidation(IValidation<User> validation)
+        {
+            userValidation = validation;
+        }
         /// <summary>
         /// In a slot, the beginning date must be set before the end date
         /// </summary>
@@ -23,7 +29,7 @@ namespace Rules
         {
             return 
                 slot != null &&
-                slot.Assignee != null &&
+                userValidation.CheckValidation(slot.Assignee) &&
                 CheckDateValidity(slot);
         }
     }
