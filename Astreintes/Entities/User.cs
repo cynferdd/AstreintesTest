@@ -13,6 +13,6 @@ namespace Entities
 
         public string Name { get; set; }
 
-        public TimeZoneInfo TimeZone { get; set; }
+        public TimeZoneInfo TimeZone { get; set; } = TimeZoneInfo.FindSystemTimeZoneById("Central European Time");
     }
 }
