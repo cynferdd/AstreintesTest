@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Interfaces
 {
@@ -10,12 +11,12 @@ namespace Interfaces
     /// <typeparam name="T">Class processed by the repository</typeparam>
     public interface IRepository<T>
     {
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAll();
 
-        T Create(T obj);
+        Task<T> Create(T obj);
 
-        T Update(T obj);
+        Task<T> Update(T obj);
 
-        bool Delete(T obj);
+        Task<bool> Delete(T obj);
     }
 }
