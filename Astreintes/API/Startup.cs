@@ -17,6 +17,7 @@ using Newtonsoft.Json;
 using Repository;
 using Rules;
 using Services;
+using Entities;
 
 namespace API
 {
@@ -35,7 +36,8 @@ namespace API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<ISlotService, SlotService>();
             services.AddScoped<ISlotRepository, SlotRepository>();
-            services.AddScoped<ISlotValidation, SlotValidation>();
+            services.AddScoped<IValidation<Slot>, SlotValidation>();
+            services.AddScoped<IValidation<User>, UserValidation>();
             services.AddDbContext<EFContext>();
         }
 
