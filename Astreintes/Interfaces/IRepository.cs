@@ -15,8 +15,6 @@ namespace Interfaces
 
         Task<T> Create(T obj);
 
-        Task<T> Update(T obj);
-
         Task<bool> Delete(T obj);
     }
 }

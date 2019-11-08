@@ -80,13 +80,5 @@ namespace Repository
                 .ToListAsync()
                 .ConfigureAwait(false);
         }
-
-        public async Task<Slot> Update(Slot obj)
-        {
-            var updated = context.Slots.Update(obj);
-            await context.SaveChangesAsync().ConfigureAwait(false);
-
-            return updated.Entity;
-        }
     }
 }

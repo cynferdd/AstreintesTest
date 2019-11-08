@@ -28,6 +28,7 @@ namespace API.Controllers
         }
         #endregion
 
+        #region get
         /// <summary>
         /// retrieving all slots, or filtering them with a period
         /// </summary>
@@ -88,5 +89,35 @@ namespace API.Controllers
             }
 
         }
+        #endregion
+
+        #region POST
+        /// <summary>
+        /// POST
+        /// creating a duty slot
+        /// </summary>
+        /// <param name="slot">slot to create</param>
+        /// <returns>created slot</returns>
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Slot slot)
+        {
+            Slot resultat = await slotService.Create(slot).ConfigureAwait(false);
+            return Ok(resultat);
+            
+        }
+        #endregion
+
+        /// <summary>
+        /// Deleting a slot
+        /// </summary>
+        /// <param name="slot"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] Slot slot)
+        {
+            bool resultat = await slotService.Delete(slot).ConfigureAwait(false);
+            return Ok(resultat);
+        }
+
     }
 }

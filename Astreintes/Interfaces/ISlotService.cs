@@ -18,8 +18,6 @@ namespace Interfaces
 
         Task<Slot> Create(Slot obj);
 
-        Task<Slot> Update(Slot obj);
-
         Task<bool> Delete(Slot obj);
     }
 }

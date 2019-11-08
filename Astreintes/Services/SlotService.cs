@@ -29,19 +29,7 @@ namespace Services
 
         public async Task<bool> Delete(Slot obj)
         {
-            
-            return await repository.Delete(obj);
-            
-        }
-
-        public async Task<Slot> Update(Slot obj)
-        {
-            Slot result = new Slot();
-            if (validation.CheckValidation(obj))
-            {
-                result = await repository.Update(obj);
-            }
-            return result;
+            return await repository.Delete(obj);   
         }
 
         public async Task<IEnumerable<Slot>> GetAll()
