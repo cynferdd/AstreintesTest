@@ -18,6 +18,7 @@ using Repository;
 using Rules;
 using Services;
 using Entities;
+using Mappers;
 
 namespace API
 {
@@ -38,6 +39,10 @@ namespace API
             services.AddScoped<ISlotRepository, SlotRepository>();
             services.AddScoped<IValidation<Slot>, SlotValidation>();
             services.AddScoped<IValidation<User>, UserValidation>();
+            services.AddScoped<IMapper<Slot, SlotUI>, SlotMapper>();
+
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddDbContext<EFContext>();
         }
 
