@@ -10,6 +10,9 @@ namespace RulesTest
     public class SlotValidationTest
     {
         #region Dates
+        /// <summary>
+        /// Check date validity with a begin date starting before the end date
+        /// </summary>
         [Fact]
         public void SlotBeginDateBeforeEndDateReturnsOk()
         {
@@ -23,6 +26,9 @@ namespace RulesTest
             Assert.True(result);
         }
 
+        /// <summary>
+        /// Check date validity with a begin date equal to the end date
+        /// </summary>
         [Fact]
         public void SlotBeginDateEqualEndDateReturnsKO()
         {
@@ -36,6 +42,9 @@ namespace RulesTest
             Assert.False(result);
         }
 
+        /// <summary>
+        /// Check date validity with a begin date starting after the end date
+        /// </summary>
         [Fact]
         public void SlotBeginDateAfterEndDateReturnsKO()
         {
@@ -49,6 +58,9 @@ namespace RulesTest
             Assert.False(result);
         }
 
+        /// <summary>
+        /// Check date validity with a null slot
+        /// </summary>
         [Fact]
         public void DateSlotNullReturnsKO()
         {
@@ -57,6 +69,9 @@ namespace RulesTest
             Assert.False(result);
         }
 
+        /// <summary>
+        /// Check date validity with an empty slot
+        /// </summary>
         [Fact]
         public void DateSlotEmptyReturnsKO()
         {
@@ -68,6 +83,9 @@ namespace RulesTest
 
         #region slot
 
+        /// <summary>
+        /// Check slot validation with a null slot
+        /// </summary>
         [Fact]
         public void SlotNullReturnsKO()
         {
@@ -76,6 +94,9 @@ namespace RulesTest
             Assert.False(result);
         }
 
+        /// <summary>
+        /// Check slot validation with a not valid assignee 
+        /// </summary>
         [Fact]
         public void SlotAssigneeNotValidReturnsKO()
         {
@@ -89,6 +110,9 @@ namespace RulesTest
             Assert.False(result);
         }
 
+        /// <summary>
+        /// Check slot validation with a valid assignee and not valid dates
+        /// </summary>
         [Fact]
         public void SlotAssigneeokDatesKoReturnsKO()
         {
@@ -102,6 +126,9 @@ namespace RulesTest
             Assert.False(result);
         }
 
+        /// <summary>
+        /// Check slot validation with a valid assignee and valid dates
+        /// </summary>
         [Fact]
         public void SlotAssigneeokDatesOkReturnsOk()
         {

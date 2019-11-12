@@ -9,6 +9,9 @@ namespace RulesTest
 {
     public class UserValidationTest
     {
+        /// <summary>
+        /// User validation with a null user
+        /// </summary>
         [Fact]
         public void UserNullReturnsKO()
         {
@@ -17,6 +20,9 @@ namespace RulesTest
             Assert.False(result);
         }
 
+        /// <summary>
+        /// User validation with an empty user
+        /// </summary>
         [Fact]
         public void UserNoNameReturnsKO()
         {
@@ -25,9 +31,11 @@ namespace RulesTest
             Assert.False(result);
         }
 
-
+        /// <summary>
+        /// User validation with a valid user
+        /// </summary>
         [Fact]
-        public void UserValidReturnsKO()
+        public void UserValidReturnsOK()
         {
 
             bool result = new UserValidation().CheckValidation(new User() { Name = "Max Lamouche" });

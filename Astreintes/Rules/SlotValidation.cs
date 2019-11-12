@@ -25,6 +25,11 @@ namespace Rules
             return slot != null && DateTime.Compare(slot.BeginDate, slot.EndDate) < 0;
         }
 
+        /// <summary>
+        /// Is the slot valid ?
+        /// </summary>
+        /// <param name="slot">slot to check</param>
+        /// <returns>valid slot ?</returns>
         public bool CheckValidation(Slot slot)
         {
             return 
